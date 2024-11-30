@@ -1,0 +1,97 @@
+h1{
+    margin: 0;
+}
+.wrapper{
+   max-width: 1150px;  /* Max width ensures it doesn't stretch beyond this */
+   margin-inline: auto;/* targets only left and right margines*/
+   /*background-color: brown;/*look how many the will take up*/
+}
+table{
+    width: 100%;
+    background-color: #F6F5F2;
+    border-collapse: collapse; /*The border-collapse CSS property sets whether cells inside a <table> have shared or separate borders.*/
+}
+th,td,caption{ 
+    padding: 1rem; 
+}
+caption,th{
+    text-align: left;
+}
+caption{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+th{
+    background-color: #00000080;
+    color: white;
+}
+tr:nth-of-type(2n){
+    background-color: #0000000D; /* using Zebra Striping we can change the color of each second tr*/
+}
+/*
+.table-container{  simple way put the table inside a srollable container.
+   max-width: 100%; 
+   overflow-x: scroll;  /* The CSS overflow property controls what happens to content that is too big to fit into an area.
+}  */
+
+ /*styling for mobile phones*/
+  @media(max-width:576px){
+    th{
+        display: none;
+    }
+    td{
+        /*display: block;*/
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr 1fr;
+        padding: 0.5rem;
+    }
+    td:first-child{
+        padding-top: 2rem;  /* a little more grouped purpuse*/
+    }
+    td:last-child{   /* A css seudo class is used to target element based on its position*/
+        padding-bottom: 2rem;  /* a little more grouped purpuse*/
+    }
+    td::before{
+        content:attr(data-cell) ":  "; /*A CSS pseudo-element is used to style specific parts of an element.*/
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+  }
+  /*styling for tablets and small laptops*/
+  @media(max-width: 991px){
+    h1{
+        margin: 0;
+    }
+    .wrapper{
+       max-width: 1150px;  /* Max width ensures it doesn't stretch beyond this */
+       margin-inline: auto;/* targets only left and right margines*/
+       /*background-color: brown;/*look how many the will take up*/
+    }
+    table{
+        width: 100%;
+        background-color: #F6F5F2;
+        border-collapse: collapse; /*The border-collapse CSS property sets whether cells inside a <table> have shared or separate borders.*/
+    }
+    th,td,caption{ 
+        padding: 1rem; 
+    }
+    caption,th{
+        text-align: left;
+    }
+    caption{
+        color: black;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    th{
+        background-color: #00000080;
+        color: white;
+    }
+    tr:nth-of-type(2n){
+        background-color: #0000000D; /* using Zebra Striping we changed every color of second  table row*/
+    }
+  }
